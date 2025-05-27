@@ -37,11 +37,11 @@ resource "aws_security_group" "blog" {
 }
 
 resource "aws_security_group" "blog_http_in"{
-  type = "ingress"
-  from_port = 80
-  to_port = 80
-  protcol = "tcp"
-  cidr_blocks = ["0.0.0.0/0]
+  type        = "ingress"
+  from_port   = 80
+  to_port     = 80
+  protcol     = "tcp"
+  cidr_blocks = ["0.0.0.0/0"]
 
   security_group_id = aws_security_group.blog.id
 }
@@ -51,7 +51,7 @@ resource "aws_security_group" "blog_https_in"{
   from_port = 443
   to_port = 443
   protcol = "tcp"
-  cidr_blocks = ["0.0.0.0/0]
+  cidr_blocks = ["0.0.0.0/0"]
 
   security_group_id = aws_security_group.blog.id
 }
@@ -61,7 +61,7 @@ resource "aws_security_group" "blog_everything_out"{
   from_port = 0
   to_port = 0
   protcol = "-1"
-  cidr_blocks = ["0.0.0.0/0]
+  cidr_blocks = ["0.0.0.0/0"]
 
   security_group_id = aws_security_group.blog.id
 }
